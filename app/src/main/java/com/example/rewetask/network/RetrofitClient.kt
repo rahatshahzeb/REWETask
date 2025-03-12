@@ -7,6 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
     private const val CITY_SEARCH_BASE_URL = "http://api.geonames.org/"
+    private const val WEATHER_BASE_URL = "https://wttr.in/"
 
     private val loggingInterceptor = HttpLoggingInterceptor().apply {
         level = HttpLoggingInterceptor.Level.BODY
@@ -26,5 +27,9 @@ object RetrofitClient {
 
     val cityApiService: CityApiService by lazy {
         getRetrofitInstance(CITY_SEARCH_BASE_URL).create(CityApiService::class.java)
+    }
+
+    val weatherApiService: WeatherApiService by lazy {
+        getRetrofitInstance(WEATHER_BASE_URL).create(WeatherApiService::class.java)
     }
 }
