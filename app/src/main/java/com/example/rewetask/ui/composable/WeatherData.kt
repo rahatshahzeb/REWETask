@@ -106,7 +106,7 @@ fun WeatherData(
                             )
                             Spacer(Modifier.height(8.dp))
                             Text(
-                                text = hourly.time ?: "",
+                                text = "${hourly.time}",
                                 fontSize = 14.sp,
                                 fontFamily = FontFamily.Monospace
                             )
@@ -135,7 +135,7 @@ fun WeatherData(
                     )
                     Spacer (Modifier.height(8.dp))
                     Text(
-                        text = weatherDetail.windSpeedKmph ?: "X",
+                        text = "${weatherDetail.windSpeedKmph} km/h",
                         fontSize = 24.sp,
                         fontFamily = FontFamily.Monospace
                     )
@@ -159,7 +159,7 @@ fun WeatherData(
                     )
                     Spacer (Modifier.height(8.dp))
                     Text(
-                        text = weatherDetail.humidity ?: "X",
+                        text = "${weatherDetail.humidity}%",
                         fontSize = 24.sp,
                         fontFamily = FontFamily.Monospace
                     )
@@ -171,7 +171,8 @@ fun WeatherData(
 
         Row {
             Card(
-                modifier = Modifier.weight(1F).padding(bottom = 16.dp),
+                modifier = Modifier
+                    .weight(1F),
                 shape = RoundedCornerShape(12.dp),
                 elevation = CardDefaults.cardElevation(4.dp)
             ) {
@@ -185,7 +186,7 @@ fun WeatherData(
                     )
                     Spacer (Modifier.height(8.dp))
                     Text(
-                        text = weatherDetail.uvIndex ?: "",
+                        text = "${weatherDetail.uvIndex}",
                         fontSize = 24.sp,
                         fontFamily = FontFamily.Monospace
                     )
@@ -209,7 +210,59 @@ fun WeatherData(
                     )
                     Spacer (Modifier.height(8.dp))
                     Text(
-                        text = weatherDetail.pressure ?: "",
+                        text = "${weatherDetail.pressure} mBar",
+                        fontSize = 24.sp,
+                        fontFamily = FontFamily.Monospace
+                    )
+                }
+            }
+        }
+
+        Spacer( Modifier.height(8.dp))
+
+        Row {
+            Card(
+                modifier = Modifier
+                    .weight(1F)
+                    .padding(bottom = 16.dp),
+                shape = RoundedCornerShape(12.dp),
+                elevation = CardDefaults.cardElevation(4.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp),
+                ) {
+                    Text(
+                        text = "Sunrise",
+                        fontSize = 16.sp
+                    )
+                    Spacer (Modifier.height(8.dp))
+                    Text(
+                        text = "${weatherDetail.sunRise}",
+                        fontSize = 24.sp,
+                        fontFamily = FontFamily.Monospace
+                    )
+                }
+            }
+
+            Spacer (Modifier.width(8.dp))
+
+            Card(
+                modifier = Modifier.weight(1F),
+                shape = RoundedCornerShape(12.dp),
+                elevation = CardDefaults.cardElevation(4.dp)
+            ) {
+                Column(
+                    modifier = Modifier
+                        .padding(16.dp),
+                ) {
+                    Text(
+                        text = "Sunset",
+                        fontSize = 16.sp
+                    )
+                    Spacer (Modifier.height(8.dp))
+                    Text(
+                        text = "${weatherDetail.sunSet}",
                         fontSize = 24.sp,
                         fontFamily = FontFamily.Monospace
                     )
@@ -231,8 +284,10 @@ fun WeatherDataPreview() {
         uvIndex = "0",
         pressure = "200",
         weatherDesc = "Clear with periodic clouds",
-        windSpeedKmph = "3 km/h",
-        humidity = "47%",
+        windSpeedKmph = "3",
+        humidity = "47",
+        sunRise = "06:00 AM",
+        sunSet = "06:00 PM",
         hourlyData = listOf(
             Hourly(tempC = "10", time = "Now"),
             Hourly(tempC = "15", time = "1pm"),

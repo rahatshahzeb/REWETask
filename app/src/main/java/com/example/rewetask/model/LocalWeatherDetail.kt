@@ -13,6 +13,8 @@ data class LocalWeatherDetail (
     val weatherDesc: String? = null,
     val windSpeedKmph: String? = null,
     val humidity: String? = null,
+    val sunRise: String? = null,
+    val sunSet: String? = null,
     val hourlyData: List<Hourly> = emptyList()
 ) {
     fun toDb(): WeatherEntity = WeatherEntity(
@@ -26,6 +28,8 @@ data class LocalWeatherDetail (
         weatherDesc = this.weatherDesc,
         windSpeedKmph = this.windSpeedKmph,
         humidity = this.humidity,
+        sunRise = this.sunRise,
+        sunSet = this.sunSet,
         hourlyData = this.hourlyData,
     )
 

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class CurrentCondition(
     @SerializedName("FeelsLikeC") var feelsLikeC: String? = null,
     @SerializedName("FeelsLikeF") var feelsLikeF: String? = null,
-    @SerializedName("cloudcover") var cloudcover: String? = null,
+    @SerializedName("cloudcover") var cloudCover: String? = null,
     @SerializedName("humidity") var humidity: String? = null,
     @SerializedName("localObsDateTime") var localObsDateTime: String? = null,
     @SerializedName("observation_time") var observationTime: String? = null,
@@ -21,8 +21,8 @@ data class CurrentCondition(
     @SerializedName("weatherCode") var weatherCode: String? = null,
     @SerializedName("weatherDesc") var weatherDesc: ArrayList<WeatherDesc> = arrayListOf(),
     @SerializedName("weatherIconUrl") var weatherIconUrl: ArrayList<WeatherIconUrl> = arrayListOf(),
-    @SerializedName("winddir16Point") var winddir16Point: String? = null,
-    @SerializedName("winddirDegree") var winddirDegree: String? = null,
-    @SerializedName("windspeedKmph") var windspeedKmph: String? = null,
-    @SerializedName("windspeedMiles") var windspeedMiles: String? = null
+    @SerializedName("winddir16Point") var windDir16Point: String? = null,
+    @SerializedName("winddirDegree") var windDirDegree: String? = null,
+    @SerializedName("windspeedKmph") var windSpeedKmph: String? = null,
+    @SerializedName("windspeedMiles") var windSpeedMiles: String? = null
 )

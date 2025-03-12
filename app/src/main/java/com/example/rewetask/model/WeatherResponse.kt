@@ -20,7 +20,7 @@ data class WeatherResponse(
                 uvIndex = currentCondition[0].uvIndex,
                 pressure = currentCondition[0].pressure,
                 weatherDesc = currentCondition[0].weatherDesc[0].value,
-                windSpeedKmph = currentCondition[0].windspeedKmph,
+                windSpeedKmph = currentCondition[0].windSpeedKmph,
                 humidity = currentCondition[0].humidity,
                 hourlyData = weather[0].hourly,
                 )
@@ -43,8 +43,10 @@ data class WeatherResponse(
                 uvIndex = currentCondition[0].uvIndex,
                 pressure = currentCondition[0].pressure,
                 weatherDesc = currentCondition[0].weatherDesc[0].value,
-                windSpeedKmph = currentCondition[0].windspeedKmph,
+                windSpeedKmph = currentCondition[0].windSpeedKmph,
                 humidity = currentCondition[0].humidity,
+                sunRise = weather[0].astronomy[0].sunRise,
+                sunSet = weather[0].astronomy[0].sunSet,
                 hourlyData = weather[0].hourly,
             )
         } catch (e: ArrayIndexOutOfBoundsException) {
