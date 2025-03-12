@@ -30,9 +30,9 @@ class WeatherRepository(
         return@withContext weatherResponse?.toDomain()
     }
 
-    suspend fun getCityWeather(cityName: String): Flow<LocalWeatherDetail> = withContext(ioDispatcher) {
+    suspend fun getCityWeather(cityName: String): Flow<LocalWeatherDetail?> = withContext(ioDispatcher) {
         return@withContext weatherDao.findWeatherByCityName(cityName).map { weatherEntity ->
-            weatherEntity.toDomain()
+            weatherEntity?.toDomain()
         }
     }
 

@@ -13,5 +13,5 @@ interface WeatherDao {
     suspend fun insertOrReplace(vararg weather: WeatherEntity)
 
     @Query("SELECT * FROM weatherentity WHERE cityName = :cityName")
-    fun findWeatherByCityName(cityName: String): Flow<WeatherEntity>
+    fun findWeatherByCityName(cityName: String): Flow<WeatherEntity?>
 }

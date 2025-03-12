@@ -18,5 +18,5 @@ interface CityDao {
     fun getCities(): Flow<List<CityEntity>>
 
     @Query("DELETE FROM CityEntity WHERE cityName = :cityName")
-    fun deleteCityByName(cityName: String)
+    suspend fun deleteCityByName(cityName: String)
 }

@@ -50,7 +50,7 @@ fun CityList(
                 )
                 Spacer(modifier = Modifier.height(4.dp))
                 Text(
-                    text = ", ${city.countryName}",
+                    text = " ${city.countryName}",
                     style = MaterialTheme.typography.bodyMedium,
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
