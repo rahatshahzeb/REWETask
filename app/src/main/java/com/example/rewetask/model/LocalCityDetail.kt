@@ -5,12 +5,12 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class LocalCityDetail(
-    val cityName: String = "",
+    val name: String = "",
     val countryName: String = "",
-    val isBookmarked: Boolean? = null,
+    val isBookmarked: Boolean = false,
 ) {
     fun toDb(): CityEntity = CityEntity(
-        cityName = this.cityName,
+        cityName = this.name,
         countryName = this.countryName,
         isBookmarked = this.isBookmarked,
     )

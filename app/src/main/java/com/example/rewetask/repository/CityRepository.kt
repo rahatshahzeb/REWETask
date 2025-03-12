@@ -26,10 +26,10 @@ class CityRepository(
     }
 
     suspend fun updateCity(cityDetail: LocalCityDetail) = withContext(ioDispatcher) {
-        if (cityDao.findCityByName(cityDetail.cityName).firstOrNull() == null) {
+        if (cityDao.findCityByName(cityDetail.name).firstOrNull() == null) {
             cityDao.insertOrReplace(cityDetail.toDb())
         } else {
-            cityDao.deleteCityByName(cityName = cityDetail.cityName)
+            cityDao.deleteCityByName(cityName = cityDetail.name)
         }
     }
 

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">REWETask</string>
+    <string name="search">Search</string>
+    <string name="search_bookmark_city">Search and bookmark your favorite cities.</string>
+    <string name="your_favorite_cities_here">Your favorite cities here.</string>
+    <string name="error_something_went_wrong">Oops! Something went wrong.</string>
 </resources>

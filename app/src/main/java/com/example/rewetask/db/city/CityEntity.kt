@@ -8,10 +8,10 @@ import com.example.rewetask.model.LocalCityDetail
 data class CityEntity(
     @ColumnInfo val cityName: String,
     @ColumnInfo val countryName: String,
-    @ColumnInfo(name = "is_Bookmarked") val isBookmarked: Boolean? = false,
+    @ColumnInfo(name = "is_Bookmarked") val isBookmarked: Boolean = false,
 ) {
     fun toDomain(): LocalCityDetail = LocalCityDetail(
-        cityName = this.cityName,
+        name = this.cityName,
         countryName = this.countryName,
         isBookmarked = this.isBookmarked,
     )

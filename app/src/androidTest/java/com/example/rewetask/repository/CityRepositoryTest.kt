@@ -53,7 +53,7 @@ class CityRepositoryTest {
     fun verify_bookmarking_city() = runTest {
         // Given
         val cityDetail = LocalCityDetail(
-            cityName = "Vienna",
+            name = "Vienna",
             countryName = "Austria",
         )
 
@@ -71,11 +71,11 @@ class CityRepositoryTest {
     fun verify_un_bookmarking_city() = runTest {
         // Given
         val viennaCityDetail = LocalCityDetail(
-            cityName = "Vienna",
+            name = "Vienna",
             countryName = "Austria",
         )
         val linzCityDetail = LocalCityDetail(
-            cityName = "Linz",
+            name = "Linz",
             countryName = "Austria",
         )
 
