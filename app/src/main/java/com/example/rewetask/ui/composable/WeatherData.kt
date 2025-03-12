@@ -73,7 +73,7 @@ fun WeatherData(
                     )
                     Spacer (Modifier.height(8.dp))
                     Text(
-                        text = "${weatherDetail.feelsLikeC}º",
+                        text = "Feels like ${weatherDetail.feelsLikeC}º",
                         modifier = Modifier
                             .align(Alignment.End),
                     )
